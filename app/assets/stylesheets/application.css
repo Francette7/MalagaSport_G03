@@ -13,3 +13,160 @@
  *= require_tree .
  *= require_self
  */
+
+
+.container {
+  background-image: url("https://diapogram.com/upload/2018/04/12/20180412124408-1aa041f3.jpg");
+}
+
+.login {
+  max-width: 280px;
+  min-height: 500px;
+  margin: 30px auto;
+  background-color: rgba(10,10,10,.20);
+}
+
+.login-icon-field {
+  height: 250px;
+  width: 100%;
+  /*background-color: red;*/
+}
+
+.login-icon {
+  margin: 50px 65px;
+}
+
+.login-form {
+  padding: 8px 20px 20px;
+  height: 95px;
+  width: 100%;
+  /*background-color: green;*/
+}
+
+
+.username-row {
+  position: auto;
+  height: 35px;
+  /*background-color: pink;*/
+  border-bottom: 1px solid;
+  margin-bottom: 10px;
+}
+
+.password-row {
+  position: auto;
+  height: 40px;
+  /*background-color: grey;*/
+  border-bottom: 1px solid;
+}
+
+.password-icon,
+.user-icon {
+  margin: 1px;
+}
+
+.password-icon .key-path,
+.user-icon .user-path{
+  fill: rgba(10,10,10,0);
+  stroke: #fff;
+  stroke-width: 4.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  -webkit-animation: dash 3s .3s linear forwards;
+  animation: dash 3s .3s linear forwards;
+}
+
+.user-icon .user-path {
+  -webkit-animation: dash 3s .3s linear forwards;
+  animation: dash 3s .3s linear forwards;
+}
+
+input {
+  position: absolute;
+  width: 195px;
+  height: 20px;
+  margin: 5px 0;
+  background: transparent;
+  border: none;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+}
+
+input::-webkit-input-placeholder {
+  color: rgba(255,255,255,.4);
+}
+
+input::-moz-placeholder {
+  color: rgba(255,255,255,.4);
+}
+
+.call-to-action {
+  margin: 22px 0;
+  height: 130px;
+  width: 100%;
+  /*background-color: blue;*/
+}
+
+button {
+  display: block;
+  width: 240px;
+  height: 40px;
+  padding: 0;
+  margin: 10px 20px 10px;
+  font-weight: 700;
+  color: #fff;
+  background-color: #35611c;
+  border: none;
+  border-radius: 20px;
+  transition: background-color .3s ease-in-out;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+}
+
+button:hover {
+  background-color: #26d69a;
+}
+
+button:active {
+  background-color: #1eaa7a;
+}
+
+p {
+  display: inline-block;
+  width: 200px;
+  margin: 0 40px;
+  font-size: .8rem;
+  color: rgba(255,255,255,.4);
+  /*background-color: yellow;*/
+}
+
+p a {
+  color: #fff;
+}
+
+label,
+p a:hover {
+  -webkit-cursor: pointer;
+  cursor: pointer;
+}
+
+@-webkit-keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+

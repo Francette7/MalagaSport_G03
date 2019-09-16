@@ -119,7 +119,6 @@ ActiveRecord::Schema.define(version: 2019_09_16_104539) do
     t.text "description"
     t.string "gender"
     t.string "pseudonym"
-    t.string "role"
     t.index ["club_id"], name: "index_users_on_club_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["quarter_id"], name: "index_users_on_quarter_id"
