@@ -46,9 +46,13 @@
     <div class="jumbotron">
         <div class="container text-center">
         <h1 class="display-3 text-primary">Listes des demandes</h1>
-
-<a class="demand btn btn-primary btn-lg" id="<%= @recrutement.id %>" href="#" role="button" >Postuler &raquo;</a>
-
+<% if @recrutement.club.admin.id == current_user.id%>
+<% @recrutement.club.members.each do |member| %>
+<% if member.id == current_user.id%>
+    <a class="demand btn btn-primary btn-lg" id="<%= @recrutement.id %>" href="#" role="button" >Postuler &raquo;</a>
+<% end %>
+<% end %>
+<% end %>
 
  
         <p>pour acceder a la page d un demande clique sur son blue nom</p>
