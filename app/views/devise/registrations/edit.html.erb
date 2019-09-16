@@ -26,6 +26,42 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+
+ <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.number_field :age %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.select(:gender, ['Masculin', 'Féminin'], { :class => 'my_style_class' }) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pseudonym %><br />
+    <%= f.text_field :pseudonym %>
+  </div>
+
+  <div class="field">
+    <%= f.label :quarter %><br />
+    <%= f.select :quarter_id, Quarter.all.map{ |c| [c.name, c.id] } %>
+  </div>
+
    <div class="field">
     <%= f.label :current_password %> <i>(entrer votre mot de passe pour confirmer la modification)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>

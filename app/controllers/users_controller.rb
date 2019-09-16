@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 		
 		puts "*"*60
 		puts params
-      if @user.update(first_name: params['first_name'] , last_name: params['last_name'], age: params['age'], description: params['description'], gender: params['gender'], pseudonym: params['pseudonym'], quarter: params['quarter'])
+      if @user.update(email: "")
         
         puts "*"*60
 		puts params
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
         
       else
       	flash[:success] = 'Il a eu une erreur dans votre action, veuillez réessayer'
-        render '/users/:id/edit'
+        render '/users/#{@user.id}/edit'
       end
 	end
 end
