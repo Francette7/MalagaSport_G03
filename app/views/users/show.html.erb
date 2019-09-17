@@ -1,8 +1,18 @@
 <% if @user == current_user %>
 <h1>Mon profil</h1>
-<button><%= link_to "Mettre à jour mon compte", edit_user_registration_path %></button>
-<button><%= link_to "Modifier mon profil", edit_user_path %></button> 
-<h1>Profil de <%= @user.pseudonym %></h1>
+<br>
+
+	<%if @user.avatar.attached?%>
+		<%= image_tag @user.avatar, alt: 'avatar', :class=>"pdp" %>
+		<br>
+		<strong> <%=link_to'Modifier ma photos de profil', edit_user_avatar_path(@user.id)%> </strong>
+		<br>
+	<%else%>
+		<strong> <%=link_to'Ajouter une photos de profil', new_user_avatar_path(@user.id)%> </strong><br>
+	<%end%>
+	<br>
+
+<h1>Apropos de <%= @user.pseudonym %></h1>
 <%end%>
 <ul>
 	<li>Pseudo: <%= @user.pseudonym%> </li>
@@ -19,4 +29,12 @@
 	<% end %>
 	<% end %>
 </ul>
+	<%= link_to "Mettre à jour mon compte", edit_user_registration_path(current_user.id)%>
 
+<style type="text/css">
+	.pdp{
+		width: 200px;
+		height: 200px;
+		border-color: currentColor;
+	}
+</style>
