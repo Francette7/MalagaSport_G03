@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   get 'avatars/show'
   root 'static_pages#index'
   resources :requests
-
+  resources :events do
+    resources :commentaire
+  end
   resources :recrutements
   resources :clubs do
   	resources :pictures

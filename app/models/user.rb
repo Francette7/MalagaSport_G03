@@ -6,5 +6,6 @@ class User < ApplicationRecord
          belongs_to :quarter, optional: true
          belongs_to :club, optional: true
          has_many :requests
+         has_many :commentaires
          has_one_attached :avatar
 end
