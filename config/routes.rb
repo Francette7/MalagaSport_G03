@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :routers
   get 'publications/new'
   get 'publications/create'
   get 'publications/edit'
