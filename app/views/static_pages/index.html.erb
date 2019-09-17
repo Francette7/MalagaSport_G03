@@ -64,21 +64,21 @@
       <div class="col-lg-3">
       <a href="<%= clubs_path%>">
      <div class="storybox" 
-       style="background: linear-gradient( rgba(34,34,34,0.30), rgba(34,34,34,0.78)), url('vendor/club.jpeg') no-repeat;
+       style="background: linear-gradient( rgba(34,34,34,0.30), rgba(34,34,34,0.78)), url('vendor/jangla.gif') no-repeat;
               background-size: cover;
                   background-position: center center;
                   -webkit-background-size: cover;
                   -moz-background-size: cover;
                   -o-background-size: cover;">
           <div class="story-body text-center">
-           <div class=""><img class="img-circle" src="vendor/club.jpeg" alt="user"></div>
+           <div class=""><img class="img-circle" src="vendor/jangla.gif" alt="user"></div>
             <h3>club</h3>
           </div>      
      </div>
 </a>
  <a href="<%= recrutements_path%>">
  <div class="storybox" 
-       style="background: linear-gradient( rgba(34,34,34,0.30), rgba(34,34,34,0.78)), url('vendor/recrutement.jpeg') no-repeat;
+       style="background: linear-gradient( rgba(34,34,34,0.30), rgba(34,34,34,0.78)), url('vendor/recru.gif') no-repeat;
               background-size: cover;
                   background-position: center center;
                   -webkit-background-size: cover;
@@ -86,7 +86,7 @@
                   -o-background-size: cover;">
 
           <div class="story-body text-center">
-           <div class=""><img class="img-circle" src="vendor/recrutement.jpeg" alt="user"></div>
+           <div class=""><img class="img-circle" src="vendor/recru.gif" alt="user"></div>
             <h3>Recrutement</h3>
           </div>      
      </div>
@@ -94,7 +94,7 @@
 
  <a href="<%= events_path%>">
  <div class="storybox" 
-       style="background: linear-gradient( rgba(34,34,34,0.30), rgba(34,34,34,0.78)), url('vendor/event.jpeg') no-repeat;
+       style="background: linear-gradient( rgba(34,34,34,0.30), rgba(34,34,34,0.78)), url('vendor/voalavo.gif') no-repeat;
               background-size: cover;
                   background-position: center center;
                   -webkit-background-size: cover;
@@ -102,7 +102,7 @@
                   -o-background-size: cover;">
 
           <div class="story-body text-center">
-           <div class=""><img class="img-circle" src="vendor/event.jpeg" alt="user"></div>
+           <div class=""><img class="img-circle" src="vendor/voalavo.gif" alt="user"></div>
             <h3>Evenement</h3>
           </div>      
      </div>
@@ -150,7 +150,6 @@
             <% clu << club %>
             <%end%>
 
-
             <% 5.times do |i| %>
  <div class="cardbox">
      
@@ -174,6 +173,7 @@
 
                .b{
                 text-align: center;
+                color: black;
                }
              </style>
        <small><span>publié le <%= eve[(i+1)*(-1)].updated_at %></span></small>
@@ -186,13 +186,12 @@
       <div class="cardbox-item">
 
       
-          </div><!--/ cardbox-item -->
+      </div><!--/ cardbox-item -->
       <div class= "b">
         
-          <h3><%= eve[(i+1)*(-1)].title%></h3>
+          <h3 style="color: rgb(0,0,400);"><%= eve[(i+1)*(-1)].title%></h3>
           <p><%= eve[(i+1)*(-1)].description%></p>
-          <strong><%= eve[(i+1)*(-1)].price%></strong>
-        
+          <p>Paff: <strong><%= eve[(i+1)*(-1)].price%></strong> $</p>
       </div>
           <div class="cardbox-like">
        <ul>
@@ -264,7 +263,7 @@
       <div class= "b">
         
           <h3><%= rec[(i+1)*(-1)].content%></h3>
-          <p> date limite d'inscription:    <strong><%= rec[(i+1)*(-1)].deadline%></strong></p>
+          <p style="color: rgb(500,20,100);"> date limite d'inscription:    <strong><%= rec[(i+1)*(-1)].deadline%></strong></p>
      
 
 
@@ -292,21 +291,33 @@
 <div class="col-lg-3">
 
     
-         <div class="suggestion-box full-width">
+  <div class="suggestion-box full-width">
     
     </div> 
-  <div class="suggestion-box full-width">
-          <img class="w-full md:w-4/5 z-50" src="https://s.france24.com/media/display/42cf5e50-9c12-11e9-b060-005056a964fe/w:1024/p:16x9/22062019_madagascar_guinee_resultats_poule_b_2.jpg">
-    </div> 
+  <div class="suggestion-box full-width" style="background-image: url(/vendor/coup.jpeg);text-align: center; color:black">
+    <div>
+      <h3 style="background-color: rgb(50,200,60);">Evénement dans ... minutes</h3>
+      <h2><%= eve[eve.count - 1].title%></h2>
+    </div>
+    
+    <div class="cardbox-like">
+      <strong style="background-color: white">Deviner qui va gagner et parier</strong>
+      <ul>
+        <% cote = rand(1..100)%>
+        <li><a href="#" class="com">Equipe A</a><span> <%= cote %> %</span></li>
+        <li><span> <%=100 - cote %> %</span><a href="#" title="" class="com">Equipe B</a> </li>
+      </ul>
+    </div><!--/ cardbox-like -->        
+                
+  </div><!--/ cardbox -->  
 
-
-        <div class="trending-box">
-     <div class="row">
+  <div class="trending-box">
+    <div class="row">
       <div class="col-lg-12">
         <h2>PARTENAIRES</h2>
       </div>
-     </div>
-        </div>
+    </div>
+  </div>
     
         <div class="trending-box">
           <img src="/vendor/a.jpg">
@@ -326,7 +337,9 @@
 
     
     
-    </div></div></div>
+    </div>
+  </div>
+</div>
 
 
 
