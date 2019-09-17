@@ -25,13 +25,18 @@
         <td><%= event.price %></td>
         <td><%= event.location %></td>
         <td><%= link_to 'Show', event %></td>
+        <% if user_signed_in? && current_user.role === 'admin' %>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<% Club.all.each do |club| %>
+<% if club.admin.id == current_user.id %>
 <%= link_to 'New Event', new_event_path %>
+<% end %>
+<% end %>
