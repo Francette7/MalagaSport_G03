@@ -17,13 +17,13 @@
         <td><%= quarter.zip_code %></td>
         <td><%= quarter.name %></td>
         <td><%= link_to 'Show', quarter %></td>
+        <% if user_signed_in? && current_user.role === 'admin' %>
         <td><%= link_to 'Edit', edit_quarter_path(quarter) %></td>
         <td><%= link_to 'Destroy', quarter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Quarter', new_quarter_path %>
