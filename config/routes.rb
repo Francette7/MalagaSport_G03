@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :requests
   resources :events do
     resources :commentaire
+    resources :likes
   end
   resources :recrutements
   resources :clubs do

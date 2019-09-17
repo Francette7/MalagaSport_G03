@@ -33,6 +33,9 @@
   <%= link_to "commentaires", event_commentaire_index_path(params[:id])%>(<%= @event_comments_count%>)
 
 
+<p><%= @event.likes.count %> <%= (@event.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+<%= button_to 'Like', event_likes_path(@event), method: :post %>
+
 
 <% if @event.club.admin.id == current_user.id %>
 <%= link_to 'Edit', edit_event_path(@event) %> |

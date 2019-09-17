@@ -192,12 +192,12 @@
           <h3><%= eve[(i+1)*(-1)].title%></h3>
           <p><%= eve[(i+1)*(-1)].description%></p>
           <strong><%= eve[(i+1)*(-1)].price%></strong>
-
-
       </div>
           <div class="cardbox-like">
        <ul>
-      <li><a href="#"></a><span> like</span></li>
+
+
+      <li><a href="<%= event_likes_path(eve[(i+1)*(-1)])%>" , method: :post><%= (eve[(i+1)*(-1)].likes.count) == 1 ? 'Like' : 'Likes'%></a><span><%= eve[(i+1)*(-1)].likes.count %> </span></li>
         <li><a href="/events/<%=eve[(i+1)*(-1)].id %>/commentaire" title="" class="com">Commentaire </a> <span class="span-last"><%= eve[(i+1)*(-1)].commentaires.all.count %></span></li>
        </ul>
           </div><!--/ cardbox-like -->        
