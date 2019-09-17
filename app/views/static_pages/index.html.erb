@@ -150,11 +150,10 @@
             <% clu << club %>
             <%end%>
 
-
             <% 5.times do |i| %>
  <div class="cardbox">
      
-          <div class="cardbox-heading" style="background-image: url('/vendor/gri.gif');">
+          <div class="cardbox-heading">
            <!-- START dropdown-->
            <div class="dropdown pull-right">
              <%= link_to "afficher", event_path(eve[(i+1)*(-1)].id), :class=>"btn btn-info" %> 
@@ -211,7 +210,7 @@
 
      <div class="cardbox">
      
-          <div class="cardbox-heading" style="background-image: url('/vendor/tete.gif');">
+          <div class="cardbox-heading">
            <!-- START dropdown-->
            <div class="dropdown pull-right">
           
@@ -277,21 +276,33 @@
 <div class="col-lg-3">
 
     
-         <div class="suggestion-box full-width">
+  <div class="suggestion-box full-width">
     
     </div> 
-  <div class="suggestion-box full-width">
-          <img class="w-full md:w-4/5 z-50" src="/vendor/Zidane.gif">
-    </div> 
+  <div class="suggestion-box full-width" style="background-image: url(/vendor/coup.jpeg);text-align: center; color:black">
+    <div>
+      <h3 style="background-color: rgb(50,200,60);">Evénement dans ... minutes</h3>
+      <h2><%= eve[eve.count - 1].title%></h2>
+    </div>
+    
+    <div class="cardbox-like">
+      <strong style="background-color: white">Deviner qui va gagner et parier</strong>
+      <ul>
+        <% cote = rand(1..100)%>
+        <li><a href="#" class="com">Equipe A</a><span> <%= cote %> %</span></li>
+        <li><span> <%=100 - cote %> %</span><a href="#" title="" class="com">Equipe B</a> </li>
+      </ul>
+    </div><!--/ cardbox-like -->        
+                
+  </div><!--/ cardbox -->  
 
-
-        <div class="trending-box">
-     <div class="row">
+  <div class="trending-box">
+    <div class="row">
       <div class="col-lg-12">
         <h2>PARTENAIRES</h2>
       </div>
-     </div>
-        </div>
+    </div>
+  </div>
     
         <div class="trending-box">
           <img src="/vendor/a.jpg">
@@ -311,7 +322,9 @@
 
     
     
-    </div></div></div>
+    </div>
+  </div>
+</div>
 
 
 
