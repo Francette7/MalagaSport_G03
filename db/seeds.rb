@@ -122,7 +122,7 @@ puts "10 seed for user created succesfully with 2 attributs and quarter_id"
 
     20.times do
         a = 21
-        date = "#{a}/09/19"
+        date = "#{rand(2019..2022)}/#{rand(1..12)}/#{rand(1..30)}"
         Recrutement.create(content: antony[rand(0..3)],
                                 deadline: date, club_id: rand(1..30))
         a +=1
@@ -145,8 +145,8 @@ puts "10 seed for Request created succesfully with attribut user_id "
       date = "#{rand(2019..2022)}/#{rand(1..12)}/#{rand(1..30)}"
         Event.create(start_date: date, 
                     duration: 5*rand(2..10), 
-                    title: Faker::Movie.quote, 
-                    description: Faker::Movies::Hobbit.character, 
+                    title: anarambositra[rand(0..29)], 
+                    description: ohabolana[rand(0..29)], 
                     price: rand(10..50), 
                     location: ohabolana[rand(0..29)], 
                     club_id: rand(1..30)

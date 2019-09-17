@@ -58,6 +58,16 @@ ActiveRecord::Schema.define(version: 2019_09_16_151844) do
     t.index ["quarter_id"], name: "index_clubs_on_quarter_id"
   end
 
+  create_table "commentaires", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id"
+    t.bigint "event_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_commentaires_on_event_id"
+    t.index ["user_id"], name: "index_commentaires_on_user_id"
+  end
+
   create_table "events", force: :cascade do |t|
     t.datetime "start_date"
     t.integer "duration"
@@ -69,6 +79,12 @@ ActiveRecord::Schema.define(version: 2019_09_16_151844) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["club_id"], name: "index_events_on_club_id"
+  end
+
+  create_table "publications", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "quarters", force: :cascade do |t|
