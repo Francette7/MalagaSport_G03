@@ -13,14 +13,13 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a href="index.html" class="nav-link">Event</a></li>
-            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            <li class="nav-item"><a href="/events" class="nav-link">Event</a></li>
             <% if user_signed_in? %>
             <li class="nav-item">     
               <% a = 0 %>
                 <% Club.all.each do |club| %>
                   <% if club.admin.id == current_user.id %>
-                    <a class="nav-link" href="/clubs/#{:id}">Mon club</a>             
+                    <a class="nav-link"><%=link_to "Mon club", club_path(club.id)%></a>             
                   <% else %>
                     <% a+= 1%>
                   <% end %>
