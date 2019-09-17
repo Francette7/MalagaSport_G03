@@ -192,12 +192,27 @@
           <h3 style="color: rgb(0,0,400);"><%= eve[(i+1)*(-1)].title%></h3>
           <p><%= eve[(i+1)*(-1)].description%></p>
           <p>Paff: <strong><%= eve[(i+1)*(-1)].price%></strong> $</p>
-
-
       </div>
           <div class="cardbox-like">
        <ul>
-      <li><a href="#"></a><span> like</span></li>
+
+<%user_like = []%>
+
+
+<% eve[(i+1)*(-1)].likes.each do |like| %>
+  <% if like.user == current_user%>
+    <% user_like << like.user.id %>
+  <%end%>
+<%end%>
+
+
+<% if user_like.count > 0 %>
+    <li><a>j'aime deja</a><span><%= eve[(i+1)*(-1)].likes.count %> </span></li>
+
+<%else%>
+
+      <li><a href="/events/<%=eve[(i+1)*(-1)].id%>/likes"  data-method = "post"><%= (eve[(i+1)*(-1)].likes.count) == 1 ? 'Like' : 'Likes'%></a><span><%= eve[(i+1)*(-1)].likes.count %> </span></li>
+<%end%>
         <li><a href="/events/<%=eve[(i+1)*(-1)].id %>/commentaire" title="" class="com">Commentaire </a> <span class="span-last"><%= eve[(i+1)*(-1)].commentaires.all.count %></span></li>
        </ul>
           </div><!--/ cardbox-like -->        
