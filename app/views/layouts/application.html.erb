@@ -14,7 +14,7 @@
 
   <body>
     <%= link_to "Home", root_path %>
-    <% if user_signed_in? && current_user.role === 'admin' %>
+    <% if user_signed_in? && current_user.id === 'admin.id' %>
     <ul>
       <li><a href="/admin"> Espace Admin </a></li>
     </ul>
@@ -78,6 +78,6 @@
   <% end %>
 </ul>
     <%= yield %>
- <h1>======================================================================================</h1>
+ 
   </body>
 </html>
