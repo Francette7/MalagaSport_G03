@@ -11,6 +11,8 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+        @event = Event.find(params[:id])
+           @event_comments_count = @event.commentaires.all.count
   end
 
   # GET /events/new
@@ -39,6 +41,9 @@ class EventsController < ApplicationController
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
+
+
+    
   end
 
   # PATCH/PUT /events/1

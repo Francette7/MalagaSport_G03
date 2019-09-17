@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   root 'static_pages#index'
   resources :requests
-  resources :events
+  resources :events do
+    resources :commentaire
+  end
   resources :recrutements
   resources :clubs do
   	resources :pictures
