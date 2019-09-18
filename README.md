@@ -18,7 +18,8 @@
 ### @Fenohery https://github.com/Fenoh3ry (FRONT-END) 💻
 
 # LINK HEROKU
-https://safe-tundra-16301.herokuapp.com/
+
+https://malagasport.herokuapp.com/
 
 # LINK TRELLO
 https://trello.com/b/MJNXCoqd/malagasport
